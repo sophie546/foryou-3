@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You :3</title>
+    <style>
+        body {
+            background-color: #F88379;
+        }
+
+        /* Style for the button */
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: lighter;
+            cursor: pointer;
+        }
+
+        /* Center the content */
+        center {
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        /* Style for the image */
+        img {
+            width: 450px;
+            height: 400px;
+        }
+        
+        #outputText {
+            color: white;
+        }
+
+        /* Style for the Yes and No buttons */
+        .response-buttons button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Centered content -->
+<center>
+    <img id="gif" src="C:/Users/lenovo.com/Downloads/giphy.gif" alt="Animated GIF">
+    <br><br>
+    <p id="outputText"></p>
+    <div class="response-buttons">
+        <!-- Initially hidden Yes and No buttons -->
+        <button style="display: none;" onclick="handleResponse('Yes')">Yes</button>
+        <button style="display: none;" onclick="handleResponse('No')">No</button>
+    </div>
+    <button id = "clickme" onclick="addText()">Click me</button>
+</center>
+
+<script>
+    var clickCount = 0;
+
+    function addText() {
+        var outputElement = document.getElementById("outputText");
+        var yesButton = document.querySelector(".response-buttons button:nth-child(1)");
+        var noButton = document.querySelector(".response-buttons button:nth-child(2)");
+        var gifElement = document.getElementById("gif");
+
+        clickCount++;
+
+        if (clickCount === 1) {
+            outputElement.innerHTML = "Hello to my most lovely woman in this world :3";
+            outputElement.innerHTML = "You know what's special about this day?";
+            gifElement.src = "C:/Users/lenovo.com/Downloads/giphy (1).gif";
+            gifElement.style.width = "450px";
+            gifElement.style.height = "280px";
+
+            // Show Yes and No buttons
+            yesButton.style.display = "inline";
+            noButton.style.display = "inline";
+			
+			//hide
+			clickme.style.display = "none";
+        } 
+        else if (clickCount === 2) {
+            outputElement.innerHTML = "So now you know hmm..";
+			clickme.innerHTML = "Next"; 
+			clickme.style.display = "inline";
+            gifElement.src = "C:/Users/lenovo.com/Downloads/giphy (2).gif";
+            gifElement.style.width = "450px";
+            gifElement.style.height = "400px";
+		
+        } else if (clickCount === 3) {
+		    document.body.style.backgroundColor = "#8D93CC";
+            outputElement.innerHTML = "I just wanted to say that thank you for everything that you have did to me, thank you so much for always chosing me <br> thank you for always loving me,a big thank you for giving me another chance<br> thank youuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu,thank you for existing, I wish u dabest to ur studies and dreams love<br> dont ever forget that I am always here for you I LOVE YOU SO MUCH HEHE";
+		    clickme.style.backgroundColor = "#3D437C";
+			clickme.innerHTML = "Next"; 
+			clickme.style.display = "inline";
+            gifElement.src = "C:/Users/lenovo.com/Downloads/giphy (3).gif";
+            gifElement.style.width = "450px";
+            gifElement.style.height = "400px";
+		
+        }   
+        else if (clickCount === 4) {
+		    document.body.style.backgroundColor = "#E5E4E2";
+            outputElement.innerHTML = "Wanna see some sharky??? before u eep???";
+			outputElement.style.color = "black";
+			clickme.style.backgroundColor = "#6D7B8D";
+			clickme.innerHTML = "UGH YES"; 
+			clickme.style.display = "inline";
+            gifElement.src = "C:/Users/lenovo.com/Downloads/ec1c7a4b336fcb0720cf9002bafdcb26.gif";
+            gifElement.style.width = "450px";
+            gifElement.style.height = "400px";
+		} else if (clickCount === 5) {
+		    document.body.style.backgroundColor = "#151B54";
+            outputElement.innerHTML = "Congratulations on earning a gay sharky.";
+			outputElement.style.color = "white";
+            gifElement.src = "C:/Users/lenovo.com/Downloads/giphy4-ezgif.com-crop.gif";
+            gifElement.style.width = "550px";
+            gifElement.style.height = "400px";
+			
+			clickme.style.display = "none";
+		
+        }
+    }
+	
+
+  function handleResponse(response) {
+    // Handle the Yes or No button click
+    var yesButton = document.querySelector(".response-buttons button:nth-child(1)");
+    var noButton = document.querySelector(".response-buttons button:nth-child(2)");
+
+    if (response === 'Yes') {
+        // Increase clickCount and proceed to another code
+        alert("Okay Good! ");
+        addText();
+        // Hide the buttons after processing 'Yes'
+        yesButton.style.display = "none";
+        noButton.style.display = "none";
+    } else if (response === 'No') {
+        // Disable the 'No' button to prevent further clicks
+        disableNoButton();
+        alert("FVK U. 'No' button is now disabled.");
+        // You can add more actions for the 'No' response if needed
+    } else {
+        // Handle unexpected responses or additional options
+        alert("Unexpected response: " + response);
+    }
+}
+
+function disableNoButton() {
+    // Disable the 'No' button to prevent further clicks
+    var noButton = document.querySelector(".response-buttons button:nth-child(2)");
+    noButton.disabled = true;
+}
+
+
+</script>
+
+</body>
+</html>
